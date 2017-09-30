@@ -100,9 +100,9 @@ class hackrequest:
         if self.settings[server.id]['inactive']:
             return await self.bot.say("We are not currently accepting applications, Try again later")
         if aprole in author.roles:
-            await self.bot.say("{}You have already applied to this server!".format(author.mention))
+            await self.bot.say("{} You have already applied to this server!".format(author.mention))
         else:
-            await self.bot.say("{}Ok lets start the application".format(author.mention))
+            await self.bot.say("{} Ok lets start the application".format(author.mention))
             while True:
                 avatar = author.avatar_url if author.avatar \
                     else author.default_avatar_url
