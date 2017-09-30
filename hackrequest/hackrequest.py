@@ -170,5 +170,5 @@ def check_file():
 def setup(bot):
     check_folder()
     check_file()
-    n = hackrequest(bot)
+    n = Request(bot)
     bot.add_cog(n)
