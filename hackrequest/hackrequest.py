@@ -115,7 +115,7 @@ class Request:
                         await self.bot.send_message(author, "Sorry you took to long, please try again later!")
                         break
                     else:
-                        em.add_field(name="Game: ", value=game.content, inline=True)
+                        em.add_field(name="Game", value=game.content, inline=True)
                         break
                 if game is None:
                     break
@@ -126,7 +126,7 @@ class Request:
                         await self.bot.send_message(author, "Timed out, Please run command again.")
                         break
                     else:
-                        em.add_field(name="Features:", value=hax1.content, inline=True)
+                        em.add_field(name="Features", value=hax1.content, inline=True)
                         break
                 if hax1 is None:
                     break
@@ -138,7 +138,7 @@ class Request:
                         await self.bot.send_message(author, "Timed out, Please Re-Run command and try again!")
                         break
                     else:
-                        em.add_field(name="Info:", value=why.content, inline=False)
+                        em.add_field(name="Info", value=why.content, inline=False)
                         aprole = discord.utils.get(server.roles, name="Hack Requester")
                         await self.bot.add_roles(author, aprole)
                         await self.bot.send_message(author, "You have finished the application, Thank you. You can submit another game"
