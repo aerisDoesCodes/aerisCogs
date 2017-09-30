@@ -119,7 +119,7 @@ class hackrequest:
                         break
                 if game is None:
                     break
-                haxmsg = await self.bot.send_message(author, "Info:")
+                haxmsg = await self.bot.send_message(author, "What are the features you want on the hack?")
                 while True:
                     hax1 = await self.bot.wait_for_message(channel=haxmsg.channel, author=author, timeout=30)
                     if hax1 is None:
@@ -130,14 +130,15 @@ class hackrequest:
                         break
                 if hax1 is None:
                     break
-                whymsg = await self.bot.send_message(author, "What are the features you want on the hack?")
+                whymsg = await self.bot.send_message(author, "Please give us information why do you want Chase Nelson to "
+                                                             "hack this game.")
                 while True:
                     why = await self.bot.wait_for_message(channel=whymsg.channel, author=author, timeout=60)
                     if why is None:
                         await self.bot.send_message(author, "Timed out, Please Re-Run command and try again!")
                         break
                     else:
-                        em.add_field(name="Why do you want Chase to hack this game", value=why.content, inline=False)
+                        em.add_field(name="Info:", value=why.content, inline=False)
                         aprole = discord.utils.get(server.roles, name="Hack Requester")
                         await self.bot.add_roles(author, aprole)
                         await self.bot.send_message(author, "You have finished the application, Thank you. You can submit another game "
