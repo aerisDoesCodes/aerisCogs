@@ -119,7 +119,7 @@ class hackrequest:
                         break
                 if game is None:
                     break
-                haxmsg = await self.bot.send_message(author, "What are the features you want on the hack?")
+                haxmsg = await self.bot.send_message(author, "Info:")
                 while True:
                     hax1 = await self.bot.wait_for_message(channel=haxmsg.channel, author=author, timeout=30)
                     if hax1 is None:
@@ -130,7 +130,7 @@ class hackrequest:
                         break
                 if hax1 is None:
                     break
-                whymsg = await self.bot.send_message(author, "Info:")
+                whymsg = await self.bot.send_message(author, "What are the features you want on the hack?")
                 while True:
                     why = await self.bot.wait_for_message(channel=whymsg.channel, author=author, timeout=60)
                     if why is None:
