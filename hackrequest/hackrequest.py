@@ -5,8 +5,8 @@ from cogs.utils.dataIO import dataIO
 from cogs.utils import checks
 
 
-class hackrequest:
-    """Custom Cog for applications"""
+class Request:
+    """Custom Cog for hack request"""
     def __init__(self, bot):
         self.bot = bot
         self.settings = dataIO.load_json('data/hackrequest/settings.json')
@@ -17,11 +17,11 @@ class hackrequest:
 
     @commands.group(name="hset", pass_context=True, no_pm=True)
     async def appset(self, ctx):
-        """configuration settings"""
+        """Configuration settings"""
         if ctx.invoked_subcommand is None:
             await self.bot.send_cmd_help(ctx)
     def initial_config(self, server_id):
-        """makes an entry for the server, defaults to turned off"""
+        """Makes an entry for the server, defaults to turned off"""
         if server_id not in self.settings:
             self.settings[server_id] = {'inactive': True,
                                         'output': [],
@@ -56,7 +56,7 @@ class hackrequest:
     @checks.admin_or_permissions(Manage_server=True)
     @appset.command(name="channel", pass_context=True, no_pm=True)
     async def setoutput(self, ctx, chan=None):
-        """sets the place to output application embed to when finished."""
+        """Sets the place to output application embed to when finished."""
         server = ctx.message.server
         if server.id not in self.settings:
             self.initial_config(server.id)
@@ -91,7 +91,7 @@ class hackrequest:
 
     @commands.command(name="request", pass_context=True)
     async def application(self, ctx):
-        """make an application by following the prompts"""
+        """Make an application by following the prompts"""
         author = ctx.message.author
         server = ctx.message.server
         aprole = discord.utils.get(server.roles, name="Hack Requester")
