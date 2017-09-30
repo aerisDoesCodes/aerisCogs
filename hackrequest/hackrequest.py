@@ -91,7 +91,7 @@ class hackrequest:
 
     @commands.command(name="request", pass_context=True)
     async def application(self, ctx):
-        """"make an application by following the prompts"""
+        """make an application by following the prompts"""
         author = ctx.message.author
         server = ctx.message.server
         aprole = discord.utils.get(server.roles, name="Hack Requester")
@@ -100,9 +100,9 @@ class hackrequest:
         if self.settings[server.id]['inactive']:
             return await self.bot.say("We are not currently accepting applications, Try again later")
         if aprole in author.roles:
-            await self.bot.say("{}You have already applied to this server!".format(author.mention))
+            await self.bot.say("{} You have already applied to this server!".format(author.mention))
         else:
-            await self.bot.say("{}Ok lets start the application".format(author.mention))
+            await self.bot.say("{} Ok lets start the application".format(author.mention))
             while True:
                 avatar = author.avatar_url if author.avatar \
                     else author.default_avatar_url
@@ -142,8 +142,8 @@ class hackrequest:
                         aprole = discord.utils.get(server.roles, name="Hack Requester")
                         await self.bot.add_roles(author, aprole)
                         await self.bot.send_message(author, "You have finished the application, Thank you. You can submit another game "
-                                                            "every 24 hours. You can't submit same game, last you submit or you will be"
-                                                            " blacklisted for using the bot, hack request or might get banned!")
+                                                            "every 24 hours. You can't submit same game, last you submit or you will be "
+                                                            "blacklisted for using the bot, hack request or might get banned!")
                         break
                 if why is None:
                     break
