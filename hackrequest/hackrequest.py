@@ -130,8 +130,8 @@ class Request:
                         break
                 if hax1 is None:
                     break
-                whymsg = await self.bot.send_message(author, "Please give us information why do you want Chase Nelson to "
-                                                             "hack this game.")
+                whymsg = await self.bot.send_message(author, "Please give us information why do you want Chase Nelson to"
+                                                             " hack this game. Give us a valid information, thanks :)")
                 while True:
                     why = await self.bot.wait_for_message(channel=whymsg.channel, author=author, timeout=60)
                     if why is None:
@@ -141,9 +141,9 @@ class Request:
                         em.add_field(name="Info:", value=why.content, inline=False)
                         aprole = discord.utils.get(server.roles, name="Hack Requester")
                         await self.bot.add_roles(author, aprole)
-                        await self.bot.send_message(author, "You have finished the application, Thank you. You can submit another game "
-                                                            "every 24 hours. You can't submit same game, last you submit or you will be "
-                                                            "blacklisted for using the bot, hack request or might get banned!")
+                        await self.bot.send_message(author, "You have finished the application, Thank you. You can submit another game"
+                                                            " every 24 hours. You can't submit same game, last you submit or you will be"
+                                                            " blacklisted for using the bot, hack request or might get banned!")
                         break
                 if why is None:
                     break
