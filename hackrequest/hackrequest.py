@@ -100,9 +100,9 @@ class hackrequest:
         if self.settings[server.id]['inactive']:
             return await self.bot.say("We are not currently accepting applications, Try again later")
         if aprole in author.roles:
-            await self.bot.say("{} You have already applied to this server!".format(author.mention))
+            await self.bot.say("{}You have already applied to this server!".format(author.mention))
         else:
-            await self.bot.say("{} Ok lets start the application".format(author.mention))
+            await self.bot.say("{}Ok lets start the application".format(author.mention))
             while True:
                 avatar = author.avatar_url if author.avatar \
                     else author.default_avatar_url
@@ -137,10 +137,12 @@ class hackrequest:
                         await self.bot.send_message(author, "Timed out, Please Re-Run command and try again!")
                         break
                     else:
-                        em.add_field(name="Info:", value=why.content, inline=False)
+                        em.add_field(name="Why do you want Chase to hack this game", value=why.content, inline=False)
                         aprole = discord.utils.get(server.roles, name="Hack Requester")
                         await self.bot.add_roles(author, aprole)
-                        await self.bot.send_message(author, "You have finished the application. Thank you")
+                        await self.bot.send_message(author, "You have finished the application, Thank you. You can submite another game"
+                                                            "every 24 hours. You can't submite same game last you submit or you will be"
+                                                            "blacklisted for using the bot, hack request or might get banned!")
                         break
                 if why is None:
                     break
