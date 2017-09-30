@@ -137,7 +137,7 @@ class hackrequest:
                         await self.bot.send_message(author, "Timed out, Please Re-Run command and try again!")
                         break
                     else:
-                        em.add_field(name="Why do you want Chase to hack this game", value=why.content, inline=False)
+                        em.add_field(name="Info:", value=why.content, inline=False)
                         aprole = discord.utils.get(server.roles, name="Hack Requester")
                         await self.bot.add_roles(author, aprole)
                         await self.bot.send_message(author, "You have finished the application. Thank you")
