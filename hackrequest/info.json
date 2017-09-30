@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "aeris",
+    "INSTALL_MSG" : "Thank you for installing the HackRequest cog by aeris.",
+    "NAME" : "hackrequest",
+    "SHORT" : "aeris customize cogs",
+    "DESCRIPTION" : "A quick and easy way to handle hack request. use [p]pset to set variables.",
+    "TAGS" : ["hack", "request", "application"]
+}  
