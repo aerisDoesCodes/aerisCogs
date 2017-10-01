@@ -130,6 +130,17 @@ class Request:
                         break
                 if hax1 is None:
                     break
+                    platmsg = await self.bot.send_message(author, "What platform is this? Mobile/PC")
+                while True:
+                    plat = await self.bot.wait_for_message(channel=platmsg.channel, author=author, timeout=30)
+                    if plat is None:
+                        await self.bot.send_message(author, "Timed out, Please run command again.")
+                        break
+                    else:
+                        em.add_field(name="Features", value=plat.content, inline=True)
+                        break
+                if plat is None:
+                    break
                 whymsg = await self.bot.send_message(author, "Please give us information why do you want Chase Nelson to"
                                                              " hack this game. Give us a valid information, thanks :)")
                 while True:
