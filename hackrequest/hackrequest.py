@@ -130,6 +130,17 @@ class Request:
                         break
                 if hax1 is None:
                     break
+                    activemsg = await self.bot.send_message(author, "How many hours per day can you be active?")
+                while True:
+                    active = await self.bot.wait_for_message(channel=activemsg.channel, author=author, timeout=30)
+                    if active is None:
+                        await self.bot.send_message(author, "Timed Out. Please re-run command and try again!")
+                        break
+                    else:
+                        em.add_field(name="Active Hours per Day:", value=active.content, inline=False)
+                        break
+                if active is None:
+                    break
                 whymsg = await self.bot.send_message(author, "Please give us information why do you want Chase Nelson to"
                                                              " hack this game. Give us a valid information, thanks :)")
                 while True:
