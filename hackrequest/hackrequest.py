@@ -131,7 +131,7 @@ class Request:
                 if hax1 is None:
                     break
                 whymsg = await self.bot.send_message(author, "What Platform of this game that you want to be hacked?"
-                                                             "PC/Android Mobile/iOS")
+                                                             " PC/Android Mobile/iOS")
                 while True:
                     why = await self.bot.wait_for_message(channel=whymsg.channel, author=author, timeout=60)
                     if why is None:
