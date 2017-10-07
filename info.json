@@ -1,8 +1,8 @@
 {
     "AUTHOR" : "aeris",
-    "INSTALL_MSG" : "Congratulations! You have added aeris to your repository list! ",
+    "INSTALL_MSG" : "Congratulations! You have added aerisCog to your repository list! ",
     "NAME" : "aerisCogs",
     "SHORT" : "Cogs for Red Discord Bot",
     "DESCRIPTION" : "Thank you for using aerisCogs!",
-    "TAGS" : ["fun", "request"]
+    "TAGS" : ["request"]
 }
