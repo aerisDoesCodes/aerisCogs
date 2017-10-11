@@ -34,7 +34,7 @@ class Request:
     @checks.admin_or_permissions(Manage_server=True)
     @appset.command(name="reset", pass_context=True, no_pm=True)
     async def fix_cache(self, ctx):
-        """Reset cache for applications"""
+        """Reset cache for application"""
         server = ctx.message.server
         self.initial_config(ctx.message.server.id)
         self.settings[server.id]['usercache'] = []
@@ -77,7 +77,7 @@ class Request:
     @checks.admin_or_permissions(Manage_server=True)
     @appset.command(name="toggle", pass_context=True, no_pm=True)
     async def reg_toggle(self, ctx):
-        """Toggles applications for the server"""
+        """Toggles application for the server"""
         server = ctx.message.server
         if server.id not in self.settings:
             self.initial_config(server.id)
